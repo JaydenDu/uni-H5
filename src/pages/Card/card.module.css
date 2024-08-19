@@ -1,0 +1,23 @@
+.blackCard {
+    background: linear-gradient(180deg, #fffaf0 0%, #bda665 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.blackCardApplyBtn {
+    background: linear-gradient(104.34deg, #c3af77, #edece8 49.72%, #c3af77);
+    color: #6e5100;
+}
+.whiteCardApplyBtn {
+    background: linear-gradient(124deg, #999999 0%, rgba(244.68, 247.54, 251.84, 0.7) 50%, #999999 100%);
+    color: #787878;
+}
+.normalCardApplyBtn {
+    background: linear-gradient(124deg, #9492a8 0%, rgba(244.68, 247.54, 251.84, 0.7) 50%, #9492a8 100%);
+    color: #787878;
+}
+.diamondCardApplyBtn {
+    background: linear-gradient(97deg, #f8eaff 0%, #d794f5 55%, #a454cb 89%);
+    color: #74009f;
+}

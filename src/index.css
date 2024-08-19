@@ -1,0 +1,24 @@
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+button {
+    outline: none;
+}
+
+input {
+    outline: none;
+}
+
+.bees-collapse .adm-list-body {
+    border: none !important;
+}
+
+.bees-collapse .adm-list-item-content {
+    border: none !important;
+}
+
+.bees-collapse .adm-collapse-panel-content .adm-list-item-content-main {
+    padding-top: 0 !important;
+}
+

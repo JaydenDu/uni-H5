@@ -1,0 +1,22 @@
+.marquee {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee var(--ad) linear infinite;
+  /* text-shadow: var(--tw) 0 #333; */
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
