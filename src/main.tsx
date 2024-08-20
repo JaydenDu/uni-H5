@@ -2,11 +2,10 @@ import { render } from "preact";
 import "virtual:uno.css";
 import "@unocss/reset/tailwind.css";
 import "@unocss/reset/tailwind-compat.css";
-import "./index.css";
-import "./antd.css";
 import App from "./App.js";
 import "./helpers/openreplay.js";
 import { initializeApi } from "@/helpers/api";
+import "@/style/index.css";
 
 const loginCallbackJwt = () => {
   const jwt = new URLSearchParams(location.search).get("jwt");

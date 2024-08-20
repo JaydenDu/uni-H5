@@ -3,7 +3,6 @@ import Form from "./Form";
 import Payment from "./Payment";
 import Results from "./Results";
 import Tabs, { TabType } from "./Tabs";
-import Page from "../../layouts/Page";
 import { useLocation, useParams } from "react-router-dom";
 import { CardState } from "./const";
 

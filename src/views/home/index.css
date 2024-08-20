@@ -1,0 +1,19 @@
+.adm-list-default .adm-list-body {
+  border-top: none ; 
+  border-bottom: none ; 
+  background-color: transparent;
+}
+
+.adm-list-default .adm-list-body .adm-list-item  {
+  padding-right: 12px;
+}
+
+.adm-list-default .adm-list-body .adm-list-item-content {
+  border: none; /* 移除默认的边框 */
+  /* 或者自定义边框样式 */
+  border-bottom: 1px solid #7C3AED;
+
+}
+
+
+/* last-item-box */
