@@ -12,8 +12,17 @@
   border: none; /* 移除默认的边框 */
   /* 或者自定义边框样式 */
   border-bottom: 1px solid #7C3AED;
-
+  color: #FFFFFF;
+}
+.adm-list-default .adm-list-body .last-item-box .adm-list-item-content{
+  border: none;
 }
 
+.adm-list-default .adm-list-body .button-item-box .adm-list-item-content .adm-list-item-content-main{
+  padding-top: 0;
+}
 
-/* last-item-box */
+.lucky-wheel-box{
+  
+}
+
