@@ -1,6 +1,16 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import { NoticeBar, Divider, List, Button, Grid } from "antd-mobile";
+import {
+  NoticeBar,
+  Divider,
+  List,
+  Button,
+  Grid,
+  Image,
+  Modal,
+  Space,
+  Toast,
+} from "antd-mobile";
 import { LuckyWheel, LuckyGrid } from "@lucky-canvas/react";
 import "./index.css";
 
@@ -13,9 +23,8 @@ const Container = styled.div`
 const TopSection = styled.div`
   flex-grow: 1; /* 占据剩余空间 */
 `;
-
 const BottomSection = styled.div`
-  height: 40%;
+  height: 48%;
 `;
 
 const CustomList = styled(List)`
@@ -30,12 +39,14 @@ const CustomListItem = styled(List.Item)`
 export default () => {
   const [blocks] = useState([
     {
-      padding: "68px",
+      padding: "40px",
       imgs: [
         {
-          src: "/src/assets/bg-dial.png", // 按钮图片路径
-          height: "100%", // 图片高度
-          rotate: true, // 是否随转盘一起旋转
+          src: "/src/assets/bg-dial.png",
+          width: "360px",
+          height: "360px",
+          top: "-30px",
+          rotate: true,
         },
       ],
     },
@@ -43,14 +54,13 @@ export default () => {
   const [prizes] = useState([
     {
       fonts: [
-        { text: "999", top: "10%", fontSize: "16px" },
-        { text: "TOC", top: "30%", fontSize: "16px" },
+        { text: "99", top: "10%", fontSize: "16px" },
+        { text: "TC", top: "30%", fontSize: "16px" },
       ],
       imgs: [
         {
           src: "/src/assets/item-golden.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -61,7 +71,6 @@ export default () => {
         {
           src: "/src/assets/item-white.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -72,7 +81,6 @@ export default () => {
         {
           src: "/src/assets/item-golden.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -83,7 +91,6 @@ export default () => {
         {
           src: "/src/assets/item-white.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -94,7 +101,6 @@ export default () => {
         {
           src: "/src/assets/item-golden.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -105,7 +111,6 @@ export default () => {
         {
           src: "/src/assets/item-white.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -116,7 +121,6 @@ export default () => {
         {
           src: "/src/assets/item-golden.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -127,7 +131,6 @@ export default () => {
         {
           src: "/src/assets/item-white.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -138,7 +141,6 @@ export default () => {
         {
           src: "/src/assets/item-golden.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -149,7 +151,6 @@ export default () => {
         {
           src: "/src/assets/item-white.png", // 按钮图片路径
           width: "68px", // 图片宽度
-          height: "74px", // 图片高度
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -162,9 +163,8 @@ export default () => {
       imgs: [
         {
           src: "/src/assets/button-arrow.png", // 按钮图片路径
-          width: "70px", // 图片宽度
           height: "106px", // 图片高度
-          top: "-72px",
+          top: "-70px",
           rotate: true, // 是否随转盘一起旋转
         },
       ],
@@ -176,34 +176,107 @@ export default () => {
     <Container>
       <TopSection>
         <NoticeBar
-          content="这条通知可以关闭"
+          content="恭喜卡巴斯基...获得了99 USDT"
           color="alert"
-          style={{ width: "100%" }}
+          style={{ width: "100%", marginBottom: "20px" }}
         />
+        <div className="relative flex flex-col align-center ">
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <Image
+              src={"/src/assets/lucky.png"}
+              style={{ marginBottom: "-30px" }}
+            />
+            <span
+              className="absolute right-12 text-white"
+              style={{ bottom: "-16px", fontSize: "20px" }}
+              onTouchStart={() => {
+                Modal.show({
+                  title: "Rule",
+                  bodyClassName: "modal-box",
+                  content: (
+                    <div style={{ overflowY: "auto" }}>
+                      <p>
+                        There’s a new art gallery in Yerevan, Armenia. You’ll
+                        find a sleek space, tasteful lighting, and creative
+                        works of art. Sculptures that look like eyeballs are
+                        emblazoned with bursts of color — fiery reds, bold
+                        yellows, soothing blues.
+                      </p>
+                      <p>
+                        But there’s a twist. Each eyeball is linked to a
+                        corresponding NFT, meaning it’s a blend of the physical
+                        and the digital.There’s a new art gallery in Yerevan,
+                        Armenia. You’ll find a sleek space, tasteful lighting,
+                        and creative works of art. Sculptures that look like
+                        eyeballs are emblazoned with bursts of color — fiery
+                        reds, bold yellows, soothing blues.
+                      </p>
+                      <p>
+                        But there’s a twist. Each eyeball is linked to a
+                        corresponding NFT, meaning it’s a blend of the physical
+                        and the digital.There’s a new art gallery in Yerevan,
+                        Armenia. You’ll find a sleek space, tasteful lighting,
+                        and creative works of art. Sculptures that look like
+                        eyeballs are emblazoned with bursts of color — fiery
+                        reds, bold yellows, soothing blues.
+                      </p>
+                      <p>
+                        But there’s a twist. Each eyeball is linked to a
+                        corresponding NFT, meaning it’s a blend of the physical
+                        and the digital.There’s a new art gallery in Yerevan,
+                        Armenia. You’ll find a sleek space, tasteful lighting,
+                        and creative works of art. Sculptures that look like
+                        eyeballs are emblazoned with bursts of color — fiery
+                        reds, bold yellows, soothing blues.
+                      </p>
+                    </div>
+                  ),
+                  showCloseButton: true,
+                });
+              }}
+            >
+              Rule
+            </span>
+          </div>
 
-        <LuckyWheel
-          height={"350px"}
-          ref={myLucky}
-          blocks={blocks}
-          prizes={prizes}
-          buttons={buttons}
-          onStart={() => {
-            // 点击抽奖按钮会触发star回调
-            myLucky.current.play();
-            setTimeout(() => {
-              const index = (Math.random() * 6) >> 0;
-              myLucky.current.stop(index);
-            }, 2500);
-          }}
-          onEnd={(prize) => {
-            // 抽奖结束会触发end回调
-            alert("恭喜你抽到 " + prize.fonts[0].text + " 号奖品");
-          }}
-        />
+          <div className="flex justify-center align-center">
+            <LuckyWheel
+              width={"300px"}
+              height={"300px"}
+              ref={myLucky}
+              blocks={blocks}
+              prizes={prizes}
+              buttons={buttons}
+              onEnd={(prize) => {
+                // 抽奖结束会触发end回调
+                alert("恭喜你抽到 " + prize.fonts[0].text + " 号奖品");
+              }}
+            />
+          </div>
+          <div
+            className="flex justify-center z-10"
+            style={{ marginTop: "-20px" }}
+          >
+            <span
+              onTouchStart={() => {
+                myLucky.current.play();
+                setTimeout(() => {
+                  const index = (Math.random() * 6) >> 0;
+                  myLucky.current.stop(index);
+                }, 2500);
+              }}
+            >
+              <Image
+                src={"/src/assets/button-before.png"}
+                style={{ width: "200px", height: "54px" }}
+              />
+            </span>
+          </div>
+        </div>
       </TopSection>
       <BottomSection>
         <Divider style={{ borderColor: "#C4B5FD" }}>
-          <div className="text-sm ">Balance 9,000,000 toc</div>
+          <div className="text-sm text-white">Balance 9,000,000 toc</div>
         </Divider>
         <CustomList>
           <CustomListItem>

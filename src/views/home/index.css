@@ -22,7 +22,10 @@
   padding-top: 0;
 }
 
-.lucky-wheel-box{
-  
+.modal-box{
+  width: 88vw;
+  transform: translateX(-8%);
 }
+
+
 
