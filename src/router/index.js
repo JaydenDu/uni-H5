@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/index";
 import Home from "../views/home";
-import About from "../views/about";
+import Ranking from "../views/ranking";
 
 const routes = createBrowserRouter([
   {
@@ -14,8 +14,8 @@ const routes = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about",
-        element: <About />,
+        path: "ranking",
+        element: <Ranking />,
       },
     ],
   },

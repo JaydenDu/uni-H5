@@ -12,6 +12,8 @@ import {
   Toast,
 } from "antd-mobile";
 import { LuckyWheel, LuckyGrid } from "@lucky-canvas/react";
+import { useNavigate } from "react-router-dom";
+
 import "./index.css";
 
 const Container = styled.div`
@@ -37,6 +39,7 @@ const CustomListItem = styled(List.Item)`
 `;
 
 export default () => {
+  const navigate = useNavigate();
   const [blocks] = useState([
     {
       padding: "40px",
@@ -187,7 +190,7 @@ export default () => {
               style={{ marginBottom: "-30px" }}
             />
             <span
-              className="absolute right-12 text-white"
+              className="absolute right-10 text-white"
               style={{ bottom: "-16px", fontSize: "20px" }}
               onTouchStart={() => {
                 Modal.show({
@@ -327,6 +330,9 @@ export default () => {
                 backgroundColor: "#A894FF",
                 border: "none",
                 color: "#000000",
+              }}
+              onTouchStart={() => {
+                navigate("/ranking");
               }}
             >
               More
