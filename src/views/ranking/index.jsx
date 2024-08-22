@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavBar, Space, Toast, Image, List, Grid } from "antd-mobile";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   height: 100vh;
@@ -34,6 +35,12 @@ export default () => {
   return (
     <Container>
       <div>
+        <motion.div
+          animate={{ y: [0, -100, 0] }} // 从 0 移动到 -100 再返回到 0
+          transition={{ duration: 2, repeat: Infinity }} // 设置动画持续时间为 2 秒，并无限循环
+        >
+          垂直运动的元素
+        </motion.div>
         <NavBar back="Back" right={right} onBack={routerLinkToHome}>
           Record
         </NavBar>
