@@ -13,6 +13,7 @@ import {
 } from "antd-mobile";
 import { LuckyWheel, LuckyGrid } from "@lucky-canvas/react";
 import { useNavigate } from "react-router-dom";
+import { XconTrumpet } from "./../../assets";
 
 import "./index.css";
 
@@ -180,8 +181,14 @@ export default () => {
       <TopSection>
         <NoticeBar
           content="恭喜卡巴斯基...获得了99 USDT"
-          color="alert"
-          style={{ width: "100%", marginBottom: "20px" }}
+          icon={<XconTrumpet />}
+          style={{
+            paddingLeft: "20px",
+            marginBottom: "20px",
+            backgroundColor: "transparent",
+            borderImage:
+              "linear-gradient(to right, #390279, #B16DFF 8%, #B16DFF 88%, #4B0277) 1",
+          }}
         />
         <div className="relative flex flex-col align-center ">
           <div style={{ position: "relative", zIndex: 1 }}>
