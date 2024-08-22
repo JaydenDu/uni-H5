@@ -1,0 +1,41 @@
+/* 自定义 NoticeBar 的样式 */
+.vertical-notice-bar {
+  position: relative;
+  height: 40px; /* 设置适当的高度，适合你的内容 */
+  overflow: hidden; /* 隐藏溢出内容 */
+  background-color: #fffbe6; /* 可选，自定义背景色 */
+  border: 1px solid #ffe58f; /* 可选，边框 */
+}
+
+.vertical-notice-bar .vertical-scroll-content {
+  position: absolute;
+  width: 100%;
+  animation: vertical-scroll 10s linear infinite; /* 使用动画实现垂直滚动 */
+}
+
+@keyframes vertical-scroll {
+  0% {
+    transform: translateY(100%);
+  }
+  20% {
+    transform: translateY(0%); /* 第一条消息显示 */
+  }
+  30% {
+    transform: translateY(0%); /* 停顿 2 秒 */
+  }
+  50% {
+    transform: translateY(-100%); /* 滚动到第二条消息 */
+  }
+  60% {
+    transform: translateY(-100%); /* 停顿 2 秒 */
+  }
+  80% {
+    transform: translateY(-200%); /* 滚动到第三条消息 */
+  }
+  90% {
+    transform: translateY(-200%); /* 停顿 2 秒 */
+  }
+  100% {
+    transform: translateY(-300%); /* 滚动到第四条消息 */
+  }
+}

@@ -14,6 +14,7 @@ import {
 import { LuckyWheel, LuckyGrid } from "@lucky-canvas/react";
 import { useNavigate } from "react-router-dom";
 import { XconTrumpet } from "./../../assets";
+import AutoNoticeBar from "../../components/AutoNoticeBar";
 
 import "./index.css";
 
@@ -175,12 +176,19 @@ export default () => {
     },
   ]);
   const myLucky = useRef();
+  const messages = [
+    "Message 1: This is a test message.",
+    "Message 2: Another message comes here.",
+    "Message 3: More messages to show.",
+    "Message 4: This is the last message.",
+  ];
 
   return (
     <Container>
       <TopSection>
+        <AutoNoticeBar messages={messages} />
         <NoticeBar
-          content="恭喜卡巴斯基...获得了99 USDT"
+          content="恭喜卡巴斯基...获得了99 USDT恭喜卡巴斯基...获得了99 USDT恭喜卡巴斯基...获得了99 USDT恭喜卡巴斯基...获得了99 USDT恭喜卡巴斯基...获得了99 USDT恭喜卡巴斯基...获得了99 USDT"
           icon={<XconTrumpet />}
           style={{
             paddingLeft: "20px",
